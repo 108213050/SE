@@ -3,8 +3,9 @@
 /**
  * Module dependencies.
  */
-
+// 吃的設定在app
 var app = require('../app');
+
 var debug = require('debug')('se:server');
 var http = require('http');
 
