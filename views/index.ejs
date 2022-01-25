@@ -1,11 +1,36 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= username %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Username is  <%= username %></p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <% include ./models/bs_css.ejs%>
+  <title>Document</title>
+</head>
+<body>
+  <% include ./navbar.ejs%>
+  <div class="container">
+    <div class="row">
+      <div id="showData" class="col-8 m-auto text-center">
+        準備要跨年了
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-8 m-auto ">
+          <div class="row">
+            <div class="col-6 text-center">
+              <a class="btn btn-dark w-75"href="/list">顯示所有事件</a>
+            </div>
+            <div class="col-6 text-center">
+              <a class="btn btn-dark w-75"href="/add">新增事項</a>
+            </div> 
+          </div>
+        </div>
+    </div>
+  </div>
+  
+  <% include ./models/bs_js.ejs%>
+  <script src="/javascripts/index.js"></script>
+</body>
 </html>

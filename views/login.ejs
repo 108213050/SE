@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <% include ./models/bs_css.ejs%>
+    <title>Document</title>
+  </head>
+  <body>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h1>登入</h1>
+          </div>
+        </div>
+        <form action="/login" method="post">
+            <div class="row m-5">
+                <div class="col-5 m-auto border border-success border-5">
+                  <div class="row mt-2 p-3">
+                    <div class="col-4 text-center">帳號</div>
+                    <div class="col-8 "><input name="username" type="text" class="w-100" ></div>
+                  </div> 
+                  <div class="row">
+                    <div class="col-4 text-center">密碼</div>
+                    <div class="col-8"><input name="password" type="password" class="w-100" ></div>
+                  </div>
+                  <div class="row m-2 ">
+                    <button class="btn btn-dark" type="submit">登入</button>
+                  </div>
+                  <div class="row m-2">
+                    <a href="/signUp" class="btn btn-dark" >註冊</a>
+                  </div>
+                </div>
+            </div>
+        </form>
+      </div>
+    <% include ./models/bs_js.ejs%>
+  </body>
+</html>

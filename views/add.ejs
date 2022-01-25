@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <% include ./models/bs_css.ejs%>
+    <title>Document</title>
+  </head>
+  <body>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h1>新增事項</h1>
+          </div>
+        </div>
+        <form action="/add" method="post">
+            <div class="row m-5">
+                <div class="col-5 m-auto border border-success border-5">
+                  <div class="row mt-2 p-3">
+                    <div class="col-4 text-center">標題</div>
+                    <div class="col-8 "><input name="title" type="text" class="w-100" ></div>
+                  </div> 
+                  <div class="row">
+                    <div class="col-4 text-center">日期</div>
+                    <div class="col-8"><input name="date" type="date" class="w-100" ></div>
+                  </div>
+                  <div class="row">
+                    <div class="col-4 text-center">時間</div>
+                    <div class="col-8"><input name="time" type="time" class="w-100" ></div>
+                  </div>
+                  <div class="row">
+                    <div class="col-4 text-center">備註</div>
+                    <div class="col-8"><textarea class="w-100" name="ps" rows="5"></textarea></div>
+                  </div>
+                  <div class="row m-2 ">
+                    <button class="btn btn-dark" type="submit">新增</button>
+                  </div>
+                  <div class="row m-2">
+                    <a href="/" class="btn btn-dark" >取消</a>
+                  </div>
+                </div>
+            </div>
+        </form>
+      </div>
+    <% include ./models/bs_js.ejs%>
+  </body>
+</html>

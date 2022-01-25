@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const loginCheck = require('./middleware/loginCheck')
 // const mysql = require('mysql');
 
 // let db_config = {
@@ -20,21 +21,26 @@ var router = express.Router();
 // connection.end();直接報廢
 // var connection = mysql.creatPool (db_config);
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  // 在app.js 把conneciton 塞到req.db => req.db = connection
-  req.db.query('SELECT * FROM user WHERE id=1', function(err, rows, fields) {
-    if (err) throw err;
-    console.log('SELECT Result: ', rows[0].id);
-    console.log('SELECT Result: ', rows[0].username);
-    console.log('SELECT PWD: ', rows[0].password);
-    let data = {
-      title: '軟工課輔',
-      username : rows[0].username
-    }
-    res.render('index', data);  
+router.get('/',loginCheck ,function(req, res, next) {
+    console.log();
+    
+    res.render('index', {title: 'Express',username: req.session.user.username});  
   });
   
+
+
+router.get('/signUp', function(req, res, next) {
+    res.render('signUp');  
 });
+router.get('/login', function(req, res, next) {
+    console.log(req.session);
+    res.render('login');  
+});
+router.get('/add', function(req, res, next) {
+    console.log(req.session);
+    res.render('add');  
+});
+
 // res: response
 // render: 渲染一個畫面
 module.exports = router;
